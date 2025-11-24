@@ -1,72 +1,103 @@
-# Análisis de Regresión Lineal - Predicción de Mortalidad por Cáncer
+# Análisis Avanzado de Regresión Lineal - Predicción de Mortalidad por Cáncer
 
-Este proyecto implementa un modelo de regresión lineal completo para predecir la tasa de mortalidad por cáncer (`target_deathrate`) utilizando diversas variables socioeconómicas y demográficas.
+Este proyecto implementa un **sistema completo y profesional** de análisis de regresión lineal para predecir la tasa de mortalidad por cáncer (`target_deathrate`) utilizando técnicas avanzadas de ciencia de datos y machine learning.
 
 ## 📋 Descripción
 
-El modelo analiza datos de diferentes condados/áreas geográficas para predecir la tasa de mortalidad por cáncer basándose en:
+El proyecto analiza datos de diferentes condados/áreas geográficas para predecir la tasa de mortalidad por cáncer utilizando:
 
 - Variables demográficas (edad, población, distribución racial)
 - Variables socioeconómicas (ingresos, pobreza, educación, empleo)
 - Variables de salud (cobertura de seguros, incidencia de cáncer)
-- Otras variables relevantes (tasa de natalidad, estado civil, etc.)
+- Técnicas avanzadas de ingeniería y selección de características
+- Validación cruzada y optimización de hiperparámetros
+- Verificación de supuestos estadísticos
 
-## 🚀 Características
+## 🎯 Estructura del Proyecto
 
-El script incluye:
+```
+cancer_regression_analysis/
+├── README.md                              # Este archivo
+├── requirements.txt                       # Dependencias del proyecto
+│
+├── generate_sample_data.py                # Generador de datos sintéticos
+│
+├── cancer_regression_model.py             # Modelo básico de regresión lineal
+├── predict_new_data.py                    # Script para hacer predicciones
+│
+├── feature_engineering.py                 # Ingeniería de características avanzada
+├── feature_selection.py                   # Selección de características (RFE, Lasso, VIF)
+├── validation_optimization.py             # Validación cruzada y optimización
+├── regression_assumptions.py              # Verificación de supuestos estadísticos
+│
+└── advanced_pipeline_complete.py          # Pipeline completo integrado (⭐ RECOMENDADO)
+```
 
-✅ **Análisis Exploratorio de Datos (EDA)**
-- Estadísticas descriptivas
-- Detección de valores nulos
-- Distribución de variables
+## 🚀 Características Principales
 
-✅ **Preprocesamiento de Datos**
-- Imputación de valores nulos
-- Codificación de variables categóricas
-- Estandarización de características
+### 🔰 Análisis Básico
+- ✅ Exploración de datos (EDA)
+- ✅ Preprocesamiento completo
+- ✅ Análisis de correlación
+- ✅ Entrenamiento de modelo básico
+- ✅ Evaluación con métricas estándar (MAE, MSE, RMSE, R²)
+- ✅ Visualizaciones profesionales
 
-✅ **Análisis de Correlación**
-- Identificación de variables más correlacionadas
-- Detección de multicolinealidad
-- Visualizaciones de correlaciones
+### 🎓 Análisis Avanzado
 
-✅ **Entrenamiento del Modelo**
-- Regresión lineal con scikit-learn
-- División train/test (80/20)
-- Estandarización de datos
+#### 1️⃣ **Ingeniería de Características** (`feature_engineering.py`)
+- Transformaciones logarítmicas y de raíz cuadrada para variables asimétricas
+- Creación de ratios y proporciones entre variables relacionadas
+- Generación de interacciones entre variables importantes
+- Características polinomiales (grado 2)
+- Análisis de asimetría (skewness) de variables
 
-✅ **Evaluación Exhaustiva**
-- MAE (Error Absoluto Medio)
-- MSE (Error Cuadrático Medio)
-- RMSE (Raíz del Error Cuadrático Medio)
-- R² (Coeficiente de Determinación)
+#### 2️⃣ **Selección de Características** (`feature_selection.py`)
+- **RFE** (Recursive Feature Elimination)
+- **Regularización Lasso** (L1) para selección automática
+- **Regularización Ridge** (L2) para reducir overfitting
+- **Análisis VIF** (Variance Inflation Factor) para detectar multicolinealidad
+- Comparación cuantitativa de métodos
 
-✅ **Visualizaciones**
-- Gráficos de correlaciones
-- Valores reales vs predichos
-- Distribución de residuos
-- Importancia de variables
+#### 3️⃣ **Validación y Optimización** (`validation_optimization.py`)
+- **K-Fold Cross-Validation** (5 folds)
+- **GridSearchCV** para búsqueda de hiperparámetros óptimos
+- Detección y análisis de outliers (Z-score)
+- Comparación de múltiples modelos (Linear, Ridge, Lasso, ElasticNet, Random Forest)
+- Evaluación del impacto de outliers en el modelo
 
-✅ **Recomendaciones**
-- Análisis de resultados
-- Sugerencias de mejora
-- Próximos pasos
+#### 4️⃣ **Análisis de Supuestos** (`regression_assumptions.py`)
+- ✓ **Linealidad**: Relación lineal entre variables
+- ✓ **Homocedasticidad**: Varianza constante (Test de Breusch-Pagan)
+- ✓ **Normalidad**: Distribución normal de residuos (Shapiro-Wilk, Jarque-Bera, K-S)
+- ✓ **Independencia**: No autocorrelación (Test de Durbin-Watson)
+- ✓ **Multicolinealidad**: Análisis VIF completo
+- ✓ **Puntos Influyentes**: Cook's Distance, DFFITS, Leverage
+
+#### 5️⃣ **Pipeline Completo** (`advanced_pipeline_complete.py`) ⭐
+- **Ejecución automática** de todo el análisis en secuencia
+- **Informe ejecutivo** con resultados consolidados
+- **Metadatos del modelo** guardados en JSON
+- **Visualización comprehensiva** de todo el proceso
+- **Modelo final optimizado** listo para producción
 
 ## 📦 Requisitos
 
 ### Librerías necesarias:
 ```
-pandas
-numpy
-matplotlib
-seaborn
-scikit-learn
-joblib
+pandas>=1.5.0
+numpy>=1.23.0
+matplotlib>=3.6.0
+seaborn>=0.12.0
+scikit-learn>=1.2.0
+joblib>=1.2.0
+scipy>=1.9.0
+statsmodels>=0.14.0
 ```
 
 ## 🔧 Instalación
 
-### 1. Clonar o descargar este proyecto
+### 1. Navegar al directorio del proyecto
 
 ```bash
 cd cancer_regression_analysis
@@ -92,170 +123,286 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## 📊 Uso
+## 📊 Guía de Uso
 
-### 1. Preparar el dataset
+### Opción A: Pipeline Completo (⭐ RECOMENDADO)
 
-Asegúrate de tener el archivo `cancer_reg.csv` en la misma carpeta que el script.
-
-### 2. Ejecutar el análisis
+Para ejecutar **todo el análisis avanzado** de una sola vez:
 
 ```bash
-python cancer_regression_model.py
+# 1. Generar datos de ejemplo (si no tienes cancer_reg.csv)
+python generate_sample_data.py
+
+# 2. Ejecutar pipeline completo
+python advanced_pipeline_complete.py
 ```
 
-### 3. Resultados generados
+**Esto ejecutará automáticamente:**
+1. Ingeniería de características
+2. Selección de características
+3. Validación cruzada
+4. Optimización de hiperparámetros
+5. Verificación de supuestos
+6. Generación de informe ejecutivo
 
-El script generará:
+**Resultados generados en:** `resultados_analisis_avanzado/`
 
-**Archivos de salida:**
-- `correlaciones_top20.png` - Top 20 variables más correlacionadas
-- `matriz_correlacion.png` - Matriz de correlación de variables principales
-- `coeficientes_modelo.png` - Importancia de variables según coeficientes
-- `evaluacion_modelo.png` - Gráficos de evaluación del modelo
+### Opción B: Análisis Paso a Paso
+
+Para ejecutar cada etapa individualmente:
+
+```bash
+# 1. Análisis básico
+python cancer_regression_model.py
+
+# 2. Ingeniería de características
+python feature_engineering.py
+
+# 3. Selección de características
+python feature_selection.py
+
+# 4. Validación y optimización
+python validation_optimization.py
+
+# 5. Análisis de supuestos
+python regression_assumptions.py
+```
+
+### Opción C: Solo Análisis Básico
+
+```bash
+# Modelo de regresión lineal básico
+python cancer_regression_model.py
+
+# Hacer predicciones con el modelo
+python predict_new_data.py
+```
+
+## 📈 Salidas Generadas
+
+### 🎨 Visualizaciones
+
+El proyecto genera múltiples visualizaciones profesionales en alta calidad (300 DPI):
+
+**Análisis Básico:**
+- `correlaciones_top20.png` - Top 20 variables correlacionadas
+- `matriz_correlacion.png` - Heatmap de correlaciones
+- `coeficientes_modelo.png` - Importancia de variables
+- `evaluacion_modelo.png` - Métricas del modelo
 - `residuos_vs_predichos.png` - Análisis de residuos
-- `cancer_regression_model.pkl` - Modelo entrenado guardado
-- `scaler.pkl` - Scaler guardado para nuevas predicciones
 
-**Salida en consola:**
-- Estadísticas del dataset
-- Proceso de preprocesamiento
-- Análisis de correlaciones
-- Métricas de evaluación
-- Conclusiones y recomendaciones
+**Análisis Avanzado:**
+- `analisis_asimetria.png` - Skewness de variables
+- `transformaciones_comparacion.png` - Antes/después de transformaciones
+- `nuevas_caracteristicas_correlacion.png` - Correlación de nuevas features
+- `analisis_vif.png` - Multicolinealidad
+- `lasso_coeficientes.png` - Features seleccionadas por Lasso
+- `comparacion_metodos_seleccion.png` - RFE vs Lasso vs Ridge
+- `validacion_cruzada.png` - Resultados de K-Fold CV
+- `analisis_outliers.png` - Detección de outliers
+- `optimizacion_resultados_finales.png` - Comparación de modelos optimizados
+- `supuesto_linealidad.png` - Verificación de linealidad
+- `supuesto_homocedasticidad.png` - Test de varianza constante
+- `supuesto_normalidad.png` - Q-Q plot y tests de normalidad
+- `supuesto_independencia.png` - Autocorrelación
+- `analisis_influencia.png` - Cook's Distance y leverage
+- `analisis_completo_final.png` - Dashboard comprehensivo
 
-## 📈 Interpretación de Resultados
+### 💾 Archivos de Datos
 
-### Métricas principales:
+- `cancer_reg.csv` - Dataset original
+- `cancer_reg_engineered.csv` - Con características mejoradas
+- `cancer_reg_selected_features.csv` - Características seleccionadas
+- `selected_features.txt` - Lista de features seleccionadas
 
-**R² (Coeficiente de Determinación)**
-- Rango: 0 a 1 (donde 1 es perfecto)
-- Indica qué porcentaje de la varianza explica el modelo
-- > 0.7: Modelo bueno
-- > 0.9: Modelo excelente
+### 🤖 Modelos Guardados
 
-**MAE (Error Absoluto Medio)**
-- Error promedio en las mismas unidades que la variable objetivo
-- Más bajo = mejor
-- Ejemplo: MAE = 5.2 significa que en promedio el error es de ±5.2 en la tasa de mortalidad
+- `cancer_regression_model.pkl` - Modelo básico
+- `scaler.pkl` - Scaler del modelo básico
+- `best_model_optimized.pkl` - Mejor modelo tras optimización
+- `scaler_optimized.pkl` - Scaler optimizado
+- `modelo_final_optimizado.pkl` - Modelo final del pipeline completo
+- `scaler_final.pkl` - Scaler final
 
-**RMSE (Raíz del Error Cuadrático Medio)**
-- Penaliza más los errores grandes
-- Más bajo = mejor
-- Útil para identificar predicciones muy desviadas
+### 📄 Reportes
 
-## 🔮 Usar el modelo para nuevas predicciones
+- `informe_ejecutivo.txt` - Resumen completo del análisis
+- `metadata_modelo.json` - Metadatos del modelo final
 
-Una vez entrenado el modelo, puedes usarlo para hacer predicciones:
+## 🎯 Interpretación de Resultados
+
+### Métricas de Evaluación
+
+| Métrica | Rango | Interpretación |
+|---------|-------|----------------|
+| **R²** | 0-1 | % de varianza explicada. >0.7 bueno, >0.9 excelente |
+| **MAE** | ≥0 | Error promedio en unidades de la variable objetivo |
+| **RMSE** | ≥0 | Error penalizando grandes desviaciones |
+| **MSE** | ≥0 | Error cuadrático medio |
+
+### Tests Estadísticos
+
+| Test | Hipótesis Nula | p-value > 0.05 |
+|------|----------------|----------------|
+| **Shapiro-Wilk** | Residuos son normales | ✓ No rechazar |
+| **Jarque-Bera** | Residuos son normales | ✓ No rechazar |
+| **Breusch-Pagan** | Homocedasticidad | ✓ No rechazar |
+| **Durbin-Watson** | No autocorrelación | DW ≈ 2 es óptimo |
+
+### Variance Inflation Factor (VIF)
+
+- **VIF < 5**: Multicolinealidad baja ✓
+- **VIF 5-10**: Multicolinealidad moderada ⚠️
+- **VIF > 10**: Multicolinealidad alta ❌ (eliminar variable)
+
+## 🔮 Usar el Modelo para Predicciones
 
 ```python
 import joblib
 import pandas as pd
-import numpy as np
 
-# Cargar el modelo y el scaler
-model = joblib.load('cancer_regression_model.pkl')
-scaler = joblib.load('scaler.pkl')
+# Cargar modelo final optimizado
+model = joblib.load('resultados_analisis_avanzado/modelo_final_optimizado.pkl')
+scaler = joblib.load('resultados_analisis_avanzado/scaler_final.pkl')
 
-# Preparar nuevos datos (debe tener las mismas columnas que X_train)
-# nuevos_datos = pd.DataFrame([...])
+# Preparar nuevos datos (con las mismas características que en entrenamiento)
+nuevos_datos = pd.DataFrame([{
+    'incidencerate': 450.0,
+    'povertypercent': 15.5,
+    'medincome': 45000,
+    # ... resto de características
+}])
 
-# Estandarizar
-nuevos_datos_scaled = scaler.transform(nuevos_datos)
+# Estandarizar y predecir
+datos_scaled = scaler.transform(nuevos_datos)
+prediccion = model.predict(datos_scaled)
 
-# Predecir
-predicciones = model.predict(nuevos_datos_scaled)
-print(f"Tasa de mortalidad predicha: {predicciones[0]:.2f}")
+print(f"Tasa de mortalidad predicha: {prediccion[0]:.2f}")
 ```
 
 ## 🎯 Variables del Dataset
 
-### Variable Objetivo:
-- **target_deathrate**: Tasa de mortalidad específica por cáncer
+### Variable Objetivo
+- **target_deathrate**: Tasa de mortalidad específica por cáncer (muertes por 100,000 habitantes)
 
-### Variables Predictoras:
+### Variables Predictoras (Original)
 
-**Cáncer y Salud:**
-- avganncount: Promedio anual de diagnósticos
-- avgdeathsperyear: Promedio anual de muertes
-- incidencerate: Tasa de incidencia por 100,000 habitantes
+**Salud:**
+- avganncount, avgdeathsperyear, incidencerate
 
 **Demográficas:**
-- popest2015: Población estimada en 2015
-- medianage: Edad mediana
-- medianagemale/female: Edad mediana por género
-- birthrate: Tasa de natalidad
-- pctwhite, pctblack, pctasian, pctotherrace: Distribución racial
+- popest2015, medianage, medianagemale, medianagefemale, birthrate
+- pctwhite, pctblack, pctasian, pctotherrace
 
 **Socioeconómicas:**
-- medincome: Ingreso medio
-- binnedinc: Rango de ingreso (categórico)
-- povertypercent: Porcentaje en pobreza
+- medincome, binnedinc, povertypercent
 
 **Educación:**
-- studypercap: Estudios per cápita
-- pctnohs18_24: % sin secundaria (18-24)
-- pcths18_24: % con secundaria (18-24)
-- pctsomecol18_24: % con universidad incompleta (18-24)
-- pctbachdeg18_24: % con título universitario (18-24)
-- pcths25_over: % con secundaria (25+)
-- pctbachdeg25_over: % con título universitario (25+)
+- studypercap, pctnohs18_24, pcths18_24, pctsomecol18_24, pctbachdeg18_24
+- pcths25_over, pctbachdeg25_over
 
 **Empleo:**
-- pctemployed16_over: % empleados (16+)
-- pctunemployed16_over: % desempleados (16+)
+- pctemployed16_over, pctunemployed16_over
 
-**Seguro de Salud:**
-- pctprivatecoverage: % con seguro privado
-- pctprivatecoveragealone: % con solo seguro privado
-- pctempprivcoverage: % empleados con seguro privado
-- pctpubliccoverage: % con seguro público
-- pctpubliccoveragealone: % con solo seguro público
+**Seguro:**
+- pctprivatecoverage, pctprivatecoveragealone, pctempprivcoverage
+- pctpubliccoverage, pctpubliccoveragealone
 
 **Otros:**
-- percentmarried: % población casada
-- pctmarriedhouseholds: % hogares matrimoniales
+- percentmarried, pctmarriedhouseholds, geography
 
-## 💡 Sugerencias de Mejora
+### Variables Creadas (Ingeniería de Características)
 
-El script incluye recomendaciones para mejorar el modelo:
+**Transformaciones:**
+- `variable_log`: Transformación logarítmica
+- `variable_sqrt`: Transformación de raíz cuadrada
+- `variable_squared`: Características cuadráticas
 
-1. **Ingeniería de características**: Crear interacciones entre variables
-2. **Selección de características**: RFE, Lasso, análisis de VIF
-3. **Modelos alternativos**: Ridge, Random Forest, XGBoost, etc.
-4. **Validación cruzada**: K-fold cross-validation
-5. **Optimización de hiperparámetros**: GridSearchCV
+**Ratios:**
+- `mortality_rate_ratio`: avgdeathsperyear / avganncount
+- `cancer_per_capita`: Casos por cada 100,000 habitantes
+- `education_ratio`: pctbachdeg25_over / pcths25_over
+- `employment_ratio`: pctemployed16_over / pctunemployed16_over
+- `insurance_ratio`: pctprivatecoverage / pctpubliccoverage
+- `racial_diversity_index`: Índice de diversidad (Herfindahl)
+
+**Interacciones:**
+- `poverty_income_int`: povertypercent × medincome
+- `age_incidence_int`: medianage × incidencerate
+- Y muchas más...
+
+## 💡 Mejores Prácticas
+
+### Para Obtener el Mejor Modelo:
+
+1. **Ejecuta el pipeline completo** primero para obtener una línea base
+2. **Revisa el informe ejecutivo** para identificar áreas de mejora
+3. **Verifica los supuestos** - si alguno falla, considera:
+   - Transformaciones adicionales de variables
+   - Modelos robustos a violaciones de supuestos
+   - Eliminación de outliers influyentes
+4. **Experimenta con diferentes hiperparámetros** usando el código de optimización
+5. **Valida con datos nuevos** antes de poner en producción
+
+### Flujo de Trabajo Recomendado:
+
+```
+1. generate_sample_data.py (si no tienes datos)
+2. advanced_pipeline_complete.py (análisis completo)
+3. Revisar resultados_analisis_avanzado/informe_ejecutivo.txt
+4. Ajustar según recomendaciones
+5. Usar modelo_final_optimizado.pkl para predicciones
+```
 
 ## 🐛 Solución de Problemas
 
-### Error: "No se encontró el archivo 'cancer_reg.csv'"
-**Solución:** Asegúrate de que el archivo CSV está en la misma carpeta que el script.
+| Problema | Solución |
+|----------|----------|
+| No se encuentra cancer_reg.csv | Ejecuta `python generate_sample_data.py` |
+| ModuleNotFoundError | `pip install -r requirements.txt` |
+| Memoria insuficiente | Reduce número de características o usa muestreo |
+| R² muy bajo | Revisa correlaciones, prueba más ingeniería de features |
+| Supuestos no cumplen | Considera transformaciones o modelos no-lineales |
 
-### Error: "ModuleNotFoundError"
-**Solución:** Instala las dependencias con `pip install -r requirements.txt`
+## 📚 Referencias y Recursos
 
-### Warning: "DeprecationWarning"
-**Solución:** Actualiza las librerías a las versiones más recientes.
+### Documentación de Librerías:
+- [scikit-learn](https://scikit-learn.org/)
+- [pandas](https://pandas.pydata.org/)
+- [statsmodels](https://www.statsmodels.org/)
 
-## 📝 Notas
-
-- El script maneja automáticamente valores nulos
-- Las variables categóricas se codifican automáticamente
-- Se genera estandarización para mejor rendimiento
-- Todos los gráficos se guardan en formato PNG de alta calidad (300 DPI)
+### Conceptos Clave:
+- [Regresión Lineal](https://es.wikipedia.org/wiki/Regresi%C3%B3n_lineal)
+- [Regularización L1/L2](https://scikit-learn.org/stable/modules/linear_model.html)
+- [Validación Cruzada](https://scikit-learn.org/stable/modules/cross_validation.html)
+- [VIF y Multicolinealidad](https://en.wikipedia.org/wiki/Variance_inflation_factor)
 
 ## 🤝 Contribuciones
 
-Este es un proyecto educativo. Siéntete libre de:
-- Modificar el código según tus necesidades
-- Experimentar con diferentes modelos
-- Agregar nuevas visualizaciones
-- Mejorar el preprocesamiento
+Este proyecto es educativo y open-source. Contribuciones bienvenidas:
+
+- 🐛 Reportar bugs
+- ✨ Proponer nuevas features
+- 📖 Mejorar documentación
+- 🎨 Añadir visualizaciones
 
 ## 📄 Licencia
 
-Este proyecto es de código abierto y está disponible para uso educativo y académico.
+Proyecto de código abierto disponible para uso educativo y académico.
 
 ---
 
-**Desarrollado con ❤️ para análisis de datos de salud pública**
+## 🎓 Créditos
+
+**Desarrollado como proyecto educativo avanzado de Ciencia de Datos**
+
+Técnicas implementadas:
+- Feature Engineering Avanzado
+- Feature Selection (RFE, Lasso, Ridge)
+- Cross-Validation & Hyperparameter Tuning
+- Statistical Assumptions Testing
+- Influence Analysis (Cook's D, DFFITS, Leverage)
+
+---
+
+**¿Tienes preguntas? Revisa el código - está completamente documentado en español** 🇪🇸
